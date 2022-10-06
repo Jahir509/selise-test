@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-around m-3 p-3">
+    <h1>Bookmark Manager</h1>
+    <button mat-raised-button color="primary" (click)="openDialog()">ADD Bookmark</button>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-6" *ngIf="cat.length <=0">
+      <h1>No Category Added</h1>
+    </div>
+    <div class="col-lg-6" *ngIf="cat.length > 0">
+      <ng-container *ngFor="let category of cat">
+        <mat-card>
+          <mat-card-title>{{category.type}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+          <mat-card-content>
+              <ng-container *ngFor="let data of category.data">
+                <div>
+                  <p class="test">{{data.title}}
+                    <button
+                    mat-raised-button
+                    color="primary"
+                    routerLink="bookmark/{{data.url}}"
+                    (mouseenter)="goToLink(data.url)"
+                  >
+                    Details
+                  </button></p>
+
+                </div>
+              </ng-container>
+          </mat-card-content>
+        </mat-card>
+        <br>
+      </ng-container>
+
+    </div>
+    <div class="col-lg-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <br>
+</div>
