@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Router} from "@angular/router";
 
 @Component({
@@ -18,7 +19,9 @@ export class DialogComponent implements OnInit {
 
   @ViewChild('bookmarkForm') bookmarkForm: any
 
-  constructor(private router:Router) { }
+  // @ts-ignore
+  constructor(private router:Router,public dialogRef: MatDialogRef<DialogComponent>,
+              ) { }
 
   ngOnInit(): void {
     this.createForm()
