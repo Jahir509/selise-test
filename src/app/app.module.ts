@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { BookmarkComponent } from './bookmark/bookmark.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { ErrorComponent } from './error/error.component';
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -22,18 +23,19 @@ import { ErrorComponent } from './error/error.component';
     BookmarkComponent,
     ErrorComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatButtonModule,
-        MatDialogModule,
-        MatInputModule,
-        MatSelectModule,
-        ReactiveFormsModule,
-        MatTooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatTooltipModule,
+    MatDividerModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

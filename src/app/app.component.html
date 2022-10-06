@@ -11,12 +11,15 @@
     <div class="col-lg-6" *ngIf="cat.length > 0">
       <ng-container *ngFor="let category of cat">
         <mat-card>
-          <mat-card-title>{{category.type}}</mat-card-title>
+          <mat-card-title>Category {{category.type}}</mat-card-title>
           <mat-card-subtitle></mat-card-subtitle>
+          <mat-divider></mat-divider>
+          <br>
           <mat-card-content>
               <ng-container *ngFor="let data of category.data">
                 <div>
-                  <p class="test">{{data.title}}
+                  <p class="test">
+                    <span><h4>{{data.title}}</h4></span>
                     <button
                     mat-raised-button
                     color="primary"
@@ -24,7 +27,8 @@
                     (mouseenter)="goToLink(data.url)"
                   >
                     Details
-                  </button></p>
+                  </button>
+                  </p>
 
                 </div>
               </ng-container>
